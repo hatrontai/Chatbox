@@ -4,8 +4,8 @@ class tokenizer:
     def __init__(self, text: str) -> None:
         self.text = text
         
-       tokens = self.split(text)
-       self.vocab = list(sorted(list(set(tokens))))
+        tokens = self.split(self.text)
+        self.vocab = list(sorted(list(set(tokens))))
         
         self.token_to_id = {token: idx for idx, token in enumerate(self.vocab)}
         self.id_to_token = {idx: token for idx, token in enumerate(self.vocab)}
