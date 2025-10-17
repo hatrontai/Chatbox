@@ -29,15 +29,15 @@ class tokenizer:
         text = ''.join(tokens)
         return text
 
-with open('../rawdata//data.txt', 'r') as file:
-    data = file.read()
+# with open('../rawdata//data.txt', 'r') as file:
+#     data = file.read()
 
-ENCODER = tokenizer(data, vocab=None)
+# ENCODER = tokenizer(data, vocab=None)
 
-if __name__ == "__main__":
-    sample_text = "hi , how are you ?"
-    print("size of vocab:", len(ENCODER.vocab))
-    encoded = ENCODER.encode(sample_text)
-    print("Encoded:", encoded)
-    decoded = ENCODER.decode(encoded)
-    print("Decoded:", decoded)
+# if __name__ == "__main__":
+#     sample_text = "hi , how are you ?"
+#     print("size of vocab:", len(ENCODER.vocab))
+#     encoded = ENCODER.encode(sample_text)
+#     print("Encoded:", encoded)
+#     decoded = ENCODER.decode(encoded)
+#     print("Decoded:", decoded)
