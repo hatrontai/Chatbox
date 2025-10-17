@@ -27,7 +27,7 @@ class tokenizer:
     
     def decode(self, token_ids: list) -> str:
         tokens = [self.id_to_token[token_id] for token_id in token_ids]
-        text = ''.join(tokens)
+        text = ' '.join(tokens)
         return text
 
 # with open('../rawdata//data.txt', 'r') as file:
