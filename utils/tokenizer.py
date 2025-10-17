@@ -1,3 +1,5 @@
+import nltk
+
 class tokenizer:
     def __init__(self, text: str, vocab) -> None:
         self.text = text
