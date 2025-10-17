@@ -10,24 +10,24 @@ class tokenizer:
         self.token_to_id = {token: idx for idx, token in enumerate(self.vocab)}
         self.id_to_token = {idx: token for idx, token in enumerate(self.vocab)}
 
-        def split(self, text: str) -> list:
-            lines = text.split('\n')
-            tokens = []
-            for line in lines:
-                tokens.extend(list(line))
-                tokens.append('\n')
-            tokens = tokens[:-1]  # Remove the last added newline
-            return tokens
-        
-        def encode(self, text: str) -> list:
-            tokens = self.split(text)
-            token_ids = [self.token_to_id[token] for token in tokens]
-            return token_ids
-        
-        def decode(self, token_ids: list) -> str:
-            tokens = [self.id_to_token[token_id] for token_id in token_ids]
-            text = ''.join(tokens)
-            return text
+    def split(self, text: str) -> list:
+        lines = text.split('\n')
+        tokens = []
+        for line in lines:
+            tokens.extend(list(line))
+            tokens.append('\n')
+        tokens = tokens[:-1]  # Remove the last added newline
+        return tokens
+    
+    def encode(self, text: str) -> list:
+        tokens = self.split(text)
+        token_ids = [self.token_to_id[token] for token in tokens]
+        return token_ids
+    
+    def decode(self, token_ids: list) -> str:
+        tokens = [self.id_to_token[token_id] for token_id in token_ids]
+        text = ''.join(tokens)
+        return text
 
 with open('../rawdata//data.txt', 'r') as file:
     data = file.read()
