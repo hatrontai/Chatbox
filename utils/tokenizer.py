@@ -3,7 +3,8 @@ class tokenizer:
         self.text = text
         
         if vocab is None:
-           self.vocab = list(sorted(list(set(text))))
+           tokens = self.split(text)
+           self.vocab = list(sorted(list(set(tokens))))
         else:
             self.vocab = vocab
         
