@@ -1,11 +1,11 @@
 class tokenizer:
-    def __init__(self, text: str, vocab: dict) -> None:
+    def __init__(self, text: str, vocab) -> None:
         self.text = text
         
-        if not isinstance(vocab, dict):
+        if vocab is None:
            self.vocab = list(sorted(list(set(text))))
         else:
-              self.vocab = vocab
+            self.vocab = vocab
         
         self.token_to_id = {token: idx for idx, token in enumerate(self.vocab)}
         self.id_to_token = {idx: token for idx, token in enumerate(self.vocab)}
