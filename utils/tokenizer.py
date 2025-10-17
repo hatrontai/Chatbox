@@ -15,7 +15,8 @@ class tokenizer:
         lines = text.split('\n')
         tokens = []
         for line in lines:
-            tokens.extend(list(line))
+            words = nltk.word_tokenize(line)
+            tokens.extend(words)
             tokens.append('\n')
         tokens = tokens[:-1]  # Remove the last added newline
         return tokens
