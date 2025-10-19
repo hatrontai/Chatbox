@@ -33,7 +33,7 @@ class tokenizer:
 with open('./rawdata//data.txt', 'r') as file:
     data = file.read()
 
-ENCODER = tokenizer(data, vocab=None)
+ENCODER = tokenizer(data)
 
 if __name__ == "__main__":
     sample_text = "hi , how are you ?"
